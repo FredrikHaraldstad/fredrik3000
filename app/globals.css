@@ -1,0 +1,372 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Jøkul Design System — font faces (self-hosted from public/fonts)
+   ============================================================ */
+@font-face {
+  font-family: "Fremtind Grotesk";
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src:
+    local("Fremtind Grotesk"),
+    url("/fonts/FremtindGrotesk-Regular-Web.woff2") format("woff2"),
+    url("/fonts/FremtindGrotesk-Regular-Web.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Fremtind Grotesk";
+  font-display: swap;
+  font-weight: 400;
+  font-style: italic;
+  src:
+    local("Fremtind Grotesk Italic"),
+    url("/fonts/FremtindGrotesk-Italic-Web.woff2") format("woff2"),
+    url("/fonts/FremtindGrotesk-Italic-Web.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Fremtind Grotesk";
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src:
+    local("Fremtind Grotesk Bold"),
+    url("/fonts/FremtindGrotesk-Bold-Web.woff2") format("woff2"),
+    url("/fonts/FremtindGrotesk-Bold-Web.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Fremtind Grotesk Display";
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src:
+    local("Fremtind Grotesk Display"),
+    url("/fonts/FremtindGrotesk-Display-Web.woff2") format("woff2"),
+    url("/fonts/FremtindGrotesk-Display-Web.woff") format("woff");
+}
+
+/* ============================================================
+   Jøkul Design System — CSS custom properties (light theme)
+   Sets all --jkl-color-* and --jkl-font-size-* variables.
+   ============================================================ */
+:root {
+  /* Background */
+  --jkl-color-background-page: #f4f2ef;
+  --jkl-color-background-page-variant: #f9f9f9;
+  --jkl-color-background-container: #f9f9f9;
+  --jkl-color-background-container-low: #ece9e5;
+  --jkl-color-background-container-high: #ffffff;
+  --jkl-color-background-container-inverted: #1b1917;
+  --jkl-color-background-container-subdued: #c8c5c3;
+  --jkl-color-background-input-base: rgba(0, 0, 0, 0);
+  --jkl-color-background-input-focus: #ffffff;
+  --jkl-color-background-action: #1b1917;
+  --jkl-color-background-interactive: rgba(0, 0, 0, 0);
+  --jkl-color-background-interactive-hover: #ece9e5;
+  --jkl-color-background-interactive-selected: #e0dbd4;
+  --jkl-color-background-alert-neutral: #e0dbd4;
+  --jkl-color-background-alert-info: #d3d3f6;
+  --jkl-color-background-alert-success: #acd3b5;
+  --jkl-color-background-alert-warning: #efdd9e;
+  --jkl-color-background-alert-error: #f6b3b3;
+  /* Text */
+  --jkl-color-text-default: #1b1917;
+  --jkl-color-text-subdued: #636060;
+  --jkl-color-text-inverted: #f9f9f9;
+  --jkl-color-text-on-action: #f9f9f9;
+  --jkl-color-text-interactive: #1b1917;
+  --jkl-color-text-interactive-hover: #636060;
+  --jkl-color-text-on-alert: #1b1917;
+  --jkl-color-text-on-alert-subdued: #444141;
+  /* Border */
+  --jkl-color-border-action: #1b1917;
+  --jkl-color-border-input: #636060;
+  --jkl-color-border-input-focus: #1b1917;
+  --jkl-color-border-separator: #c8c5c3;
+  --jkl-color-border-separator-strong: #636060;
+  --jkl-color-border-separator-hover: #1b1917;
+  --jkl-color-border-subdued: #c8c5c3;
+
+  /* Font sizes — fluid responsive scale */
+  --jkl-font-size-1: clamp(2.25rem, 1.87rem + 1.63vw, 3.5rem);
+  --jkl-font-size-2: clamp(1.875rem, 1.61rem + 1.14vw, 2.75rem);
+  --jkl-font-size-3: clamp(1.625rem, 1.43rem + 0.82vw, 2.25rem);
+  --jkl-font-size-4: clamp(1.438rem, 1.34rem + 0.41vw, 1.75rem);
+  --jkl-font-size-5: clamp(1.313rem, 1.24rem + 0.33vw, 1.563rem);
+  --jkl-font-size-6: clamp(1.125rem, 1.07rem + 0.25vw, 1.313rem);
+  --jkl-font-size-7: 1rem;
+  --jkl-font-size-8: clamp(2.25rem, 1.87rem + 1.63vw, 3.5rem);
+  --jkl-font-size-9: clamp(1.875rem, 1.61rem + 1.14vw, 2.75rem);
+  --jkl-font-size-10: clamp(3rem, 2.5rem + 2vw, 4.5rem);
+
+  /* Line heights */
+  --jkl-line-height-flush: 1;
+  --jkl-line-height-tight: 1.3;
+  --jkl-line-height-relaxed: 1.6;
+}
+
+/* ============================================================
+   Base styles
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    "Fremtind Grotesk",
+    "Adjusted Arial Fallback",
+    Arial,
+    sans-serif;
+  color: var(--jkl-color-text-default);
+  background-color: var(--jkl-color-background-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   WCAG 2.2 — accessible focus styles
+   3px offset ring with high contrast (3:1 ratio minimum)
+   ============================================================ */
+*:focus-visible {
+  outline: 3px solid var(--jkl-color-border-action);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ============================================================
+   Skip to content (WCAG 2.4.1 Bypass Blocks)
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.25rem;
+  background: var(--jkl-color-background-action);
+  color: var(--jkl-color-text-on-action);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--jkl-color-border-action);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   Screen reader only utility
+   ============================================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ============================================================
+   View Transitions for smooth page navigation (WCAG 2.3.3 friendly)
+   ============================================================ */
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
+
+/* Keep top bar fixed across page transitions — no flicker */
+.topbar-persist {
+  view-transition-name: topbar-persist;
+}
+
+::view-transition-old(topbar-persist),
+::view-transition-new(topbar-persist) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Default: soft fade (browser back/forward button, no direction set) */
+::view-transition-old(root) {
+  animation-name: jkl-fade-out;
+}
+::view-transition-new(root) {
+  animation-name: jkl-fade-in;
+}
+
+/* Forward navigation (left → right in the nav): slide left */
+:root[data-nav-direction="forward"]::view-transition-old(root) {
+  animation-name: page-slide-out-left;
+}
+:root[data-nav-direction="forward"]::view-transition-new(root) {
+  animation-name: page-slide-in-right;
+}
+
+/* Backward navigation (right → left in the nav): slide right */
+:root[data-nav-direction="backward"]::view-transition-old(root) {
+  animation-name: page-slide-out-right;
+}
+:root[data-nav-direction="backward"]::view-transition-new(root) {
+  animation-name: page-slide-in-left;
+}
+
+@keyframes jkl-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes jkl-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes page-slide-out-left {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(-52px); }
+}
+@keyframes page-slide-in-right {
+  from { opacity: 0; transform: translateX(52px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes page-slide-out-right {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(52px); }
+}
+@keyframes page-slide-in-left {
+  from { opacity: 0; transform: translateX(-52px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ============================================================
+   Project card heading — heavier weight than default heading-4
+   ============================================================ */
+.heading-4 {
+  font-weight: 900;
+}
+
+/* ============================================================
+   Hero title — larger than the Jøkul title scale cap
+   ============================================================ */
+.hero-title {
+  font-size: clamp(4rem, 3rem + 4vw, 8rem);
+  line-height: var(--jkl-line-height-tight);
+}
+
+/* ============================================================
+   Scrollbar hide utility (carousel)
+   ============================================================ */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ============================================================
+   Smooth infinite carousel
+   4 cards × (300px + 16px gap) = 1264px (mobile)
+   4 cards × (380px + 16px gap) = 1584px (lg)
+   ============================================================ */
+@keyframes carousel-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-300px * 4 - 16px * 4));
+  }
+}
+
+@media (min-width: 1024px) {
+  @keyframes carousel-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-380px * 4 - 16px * 4));
+    }
+  }
+}
+
+.animate-scroll {
+  animation: carousel-scroll 20s linear infinite;
+}
+
+.animate-scroll:hover,
+.animate-scroll:focus-within {
+  animation-play-state: paused;
+}
+
+/* Carousel scroll-into-focus: fade in when section enters view (opacity only so translateX animation is preserved) */
+.carousel-focus-transition {
+  opacity: 0.7;
+  transform: scale(0.88);
+  transform-origin: center center;
+  transition:
+    opacity 0.9s cubic-bezier(0.33, 1, 0.68, 1),
+    transform 0.9s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.carousel-focus-transition.carousel-in-focus {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ============================================================
+   Logo drawing animation
+   ============================================================ */
+@keyframes draw-logo {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-logo 0.4s ease-out forwards;
+}
+
+/* ============================================================
+   Text reveal animation
+   ============================================================ */
+@keyframes text-reveal {
+  0%   { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+.animate-text-reveal {
+  animation: text-reveal 2s ease-out forwards;
+}

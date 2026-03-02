@@ -1,0 +1,70 @@
+---
+description: 
+alwaysApply: true
+---
+
+# Jøkul Design System
+
+Package: `@fremtind/jokul` — always import React components from this package.
+Font: Fremtind Grotesk (self-hosted in `public/fonts/`, loaded via `globals.css`).
+
+## Colors — Tailwind utility classes only
+
+Use semantic color tokens via Tailwind — never raw hex or oklch values directly in JSX:
+
+| Token class | Usage |
+|---|---|
+| `bg-background-page` | Page background (#F4F2EF warm cream) |
+| `bg-background-container` | Card/surface background |
+| `bg-background-container-low` | Subdued surface |
+| `bg-background-container-inverted` | Dark surfaces (#1B1917) |
+| `bg-background-action` | Primary CTA buttons |
+| `text-text-default` | Primary body text |
+| `text-text-subdued` | Secondary/meta text |
+| `text-text-inverted` | Light text on dark surfaces |
+| `text-text-on-action` | Text on action/button backgrounds |
+| `border-border-separator` | Divider lines |
+| `border-border-input` | Form field borders |
+
+## Typography — CSS classes from jokulTypographyPlugin
+
+Never use raw `text-[size]` utilities for semantic text. Use these classes instead:
+
+```tsx
+// ✅ GOOD
+<h1 className="title">Page title</h1>
+<h2 className="heading-1">Section heading</h2>
+<h3 className="heading-2">Subsection</h3>
+<p className="body">Body text</p>
+<p className="small">Meta / secondary text</p>
+
+// ❌ BAD
+<h1 className="text-4xl font-bold">Page title</h1>
+```
+
+Available: `.title`, `.title-small`, `.heading-1` through `.heading-5`, `.paragraph-large`, `.paragraph-medium`, `.paragraph-small`, `.text-large`, `.text-medium`, `.text-small`, `.text-micro`, `.body`, `.small`
+
+## React Components
+
+Import from `@fremtind/jokul/components/[name]`:
+
+```tsx
+import { Button } from "@fremtind/jokul/components/button";
+import { Tag } from "@fremtind/jokul/components/tag";
+import { Card } from "@fremtind/jokul/components/card";
+```
+
+## WCAG 2.2 Requirements
+
+- All interactive elements must have visible focus rings (Jøkul provides these by default)
+- Minimum touch target 24×24px (WCAG 2.5.8); use 44×44px for primary CTAs
+- Text contrast: 4.5:1 for normal text, 3:1 for large text and UI components
+- `alt=""` for decorative images, descriptive `alt` for informative ones
+- `aria-current="page"` on active navigation links
+- `lang="no"` on `<html>` for Norwegian content; `lang="en"` for English
+- Skip-to-content link must be the first focusable element
+
+## Border radius
+
+Use Jøkul border-radius scale:
+- `rounded-none` (0) · `rounded-xs` (4px) · `rounded-s` (8px) · `rounded-m` (12px) · `rounded-l` (16px) · `rounded-full` (pill)

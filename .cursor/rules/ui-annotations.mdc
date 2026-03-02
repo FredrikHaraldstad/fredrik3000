@@ -1,0 +1,61 @@
+---
+description: UI annotation pattern — numbered badges on design images with a side comment list
+globs: app/projects/**/*.tsx
+alwaysApply: false
+---
+
+# UI Annotations ("UI comments")
+
+When the user asks for "UI comments" or "annotate the UI", use this pattern: numbered badges overlaid on images with matching numbered comments in a side panel.
+
+## Structure
+
+```tsx
+{(() => {
+  // ── Edit annotations here ──────────────────────────────
+  const annotations: { id: number; text: string }[] = [
+    { id: 1, text: "Your comment for element 1" },
+    { id: 2, text: "Your comment for element 2" },
+  ];
+  // ───────────────────────────────────────────────────────
+
+  const Badge = ({ n }: { n: number }) => (
+    <span
+      className="inline-flex items-center justify-center rounded-full select-none flex-shrink-0"
+      style={{ width: 24, height: 24, backgroundColor: "#1B1917", color: "#F4F2EF", fontSize: 12, fontWeight: 600, lineHeight: 1 }}
+    >
+      {n}
+    </span>
+  );
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 items-start">
+      {/* Images with badges */}
+      <div className="relative flex-shrink-0">
+        <img src="/your-image.png" alt="..." className="w-full h-auto" />
+        {/* Position badge with top/left as percentages */}
+        <span className="absolute" style={{ top: "10%", left: "5%" }}>
+          <Badge n={1} />
+        </span>
+      </div>
+
+      {/* Comment list */}
+      <ul className="space-y-5 list-none pt-2">
+        {annotations.map((a) => (
+          <li key={a.id} className="flex items-start gap-3">
+            <span className="flex-shrink-0 mt-0.5"><Badge n={a.id} /></span>
+            <p className="body text-text-default">{a.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+})()}
+```
+
+## Rules
+- Always use inline styles for the Badge (not Jøkul typography classes — they break the circle rendering)
+- Image wrappers must be `relative` for badge positioning
+- Position badges with `style={{ top: "X%", left: "X%" }}` using percentages so they scale with the image
+- The annotation list lives in a `280px` right column
+- Multiple images can share the same annotation list — just stack them in the left column
