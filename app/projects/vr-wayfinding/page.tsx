@@ -47,18 +47,19 @@ export default function VRWayfindingPage() {
 
         <hr className="border-border-separator mb-16" />
 
-        {/* Add your sections below */}
+        {/* Overview section temporarily hidden so Process comes first */}
+        {/*
         <section className="mb-32" aria-labelledby="overview-heading">
           <h2 id="overview-heading" className="heading-1 text-text-default mb-8">Overview</h2>
           <p className="body text-text-default mb-12">
             Add your VR wayfinding project content here.
           </p>
 
-          {/* Video placeholder */}
           <div className="mb-12">
             <div className="aspect-video bg-background-container-low rounded-[16px] overflow-hidden max-w-4xl mx-auto" />
           </div>
         </section>
+        */}
 
         <section className="mb-32" aria-labelledby="process-heading">
           <h2 id="process-heading" className="heading-1 text-text-default mb-12">Process</h2>
