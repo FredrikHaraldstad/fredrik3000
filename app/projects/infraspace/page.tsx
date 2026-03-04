@@ -2,6 +2,7 @@
 
 import TransitionLink from "@/components/TransitionLink";
 import { useEffect, useRef } from "react";
+import SafeImage from "@/components/SafeImage";
 
 function AutoplayVideo({ src, title }: { src: string; title?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -132,7 +133,7 @@ export default function InfraspacePage() {
           <div className="mb-12">
             <div className="aspect-video bg-background-container-low rounded-[16px] overflow-hidden max-w-4xl mx-auto">
               <AutoplayVideo
-                src="/Screen Recording 2026-02-24 at 12.53.58.mov"
+                src="/infraspace/infraspace-walkthrough.mov"
                 title="Infraspace website walkthrough"
               />
             </div>

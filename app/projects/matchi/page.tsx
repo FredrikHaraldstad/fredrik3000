@@ -1,6 +1,7 @@
 "use client";
 
 import TransitionLink from "@/components/TransitionLink";
+import SafeImage from "@/components/SafeImage";
 
 export default function MatchiPage() {
   return (
@@ -64,8 +65,8 @@ export default function MatchiPage() {
           <h2 id="overview-heading" className="heading-1 text-text-default mb-8">Overview</h2>
 
           <div className="rounded-l overflow-hidden max-w-xl mx-auto">
-            <img
-              src="/matchi overwiew1.svg"
+            <SafeImage
+              src="/matchi/matchi-overview-1.svg"
               alt="Side-by-side comparison: original Matchi design (left) vs redesigned version (right)"
               loading="lazy"
               className="w-full h-auto mx-auto"
@@ -91,8 +92,8 @@ export default function MatchiPage() {
             </div>
             <div className="flex justify-center">
               <div className="rounded-[16px] overflow-hidden max-w-md w-full">
-                <img
-                  src="/Matchi old.svg"
+                <SafeImage
+                  src="/matchi/matchi-original-ui.svg"
                   alt="Original Matchi interface showing usability issues"
                   loading="lazy"
                   className="w-full h-[500px] object-contain"
@@ -106,8 +107,8 @@ export default function MatchiPage() {
           </h3>
 
           <div className="rounded-l overflow-hidden max-w-4xl mx-auto">
-            <img
-              src="/ekte.svg"
+            <SafeImage
+              src="/matchi/matchi-sketches-1.svg"
               alt="Sketches and early prototypes for the redesigned play page"
               loading="lazy"
               className="w-full h-auto"
@@ -135,8 +136,8 @@ export default function MatchiPage() {
             </div>
             <div className="flex justify-center">
               <div className="rounded-[16px] overflow-hidden max-w-md w-full">
-                <img
-                  src="/matchi ferdig.svg"
+                <SafeImage
+                  src="/matchi/matchi-final-ui.svg"
                   alt="Final design proposal for the redesigned Matchi play page"
                   loading="lazy"
                   className="w-full h-[500px] object-contain"

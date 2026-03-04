@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import { ProjectsCarouselFocus } from "@/components/ProjectsCarouselFocus";
 import SplashLogo from "@/components/SplashLogo";
 import { TypewriterHeading } from "@/components/TypewriterHeading";
+
+export const metadata: Metadata = {
+  title: "Portfolio – Fredrik Haraldstad, Interaction Designer & Developer",
+  description:
+    "Explore the portfolio of Fredrik Haraldstad, an interaction designer and front-end developer based in Oslo, showcasing UX, UI and service design projects.",
+  openGraph: {
+    title: "Portfolio – Fredrik Haraldstad",
+    description:
+      "Selected interaction design, UX, UI and service design projects by Fredrik Haraldstad.",
+    type: "website",
+  },
+};
 
 /**
  * Home page — single-page scroll layout:
@@ -78,7 +91,14 @@ export default function Home() {
             <dl className="flex gap-12 min-w-0" aria-label="Work experience">
               <div className="flex-shrink-0 space-y-2">
                 <dt className="small text-text-subdued">Current</dt>
-                <dd className="heading-2 text-text-default">
+                <dd
+                  className="heading-2 text-text-default font-normal"
+                  style={{
+                    backgroundImage: "none",
+                    WebkitBackgroundClip: "unset",
+                    backgroundClip: "unset",
+                  }}
+                >
                   Freelance designer and developer
                 </dd>
               </div>
@@ -98,6 +118,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Fredrik Haraldstad",
+            jobTitle: "Interaction Designer & Developer",
+            description:
+              "Interaction designer and front-end developer specialising in UX, UI and service design.",
+          }),
+        }}
+      />
     </>
   );
 }

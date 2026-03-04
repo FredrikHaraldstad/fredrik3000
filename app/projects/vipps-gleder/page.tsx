@@ -2,6 +2,23 @@
 
 import TransitionLink from "@/components/TransitionLink";
 import { useEffect, useRef } from "react";
+import SafeImage from "@/components/SafeImage";
+
+// Images for the Vipps design proposal carousel
+const vippsCarouselImages = [
+  "/vipps-gleder/vipps-carousel-01.svg",
+  "/vipps-gleder/vipps-carousel-02.svg",
+  "/vipps-gleder/vipps-carousel-03.svg",
+  "/vipps-gleder/vipps-carousel-04.svg",
+  "/vipps-gleder/vipps-carousel-05.svg",
+  "/vipps-gleder/vipps-carousel-06.svg",
+  "/vipps-gleder/vipps-carousel-07.svg",
+  "/vipps-gleder/vipps-carousel-08.svg",
+  "/vipps-gleder/vipps-carousel-09.svg",
+  "/vipps-gleder/vipps-carousel-10.svg",
+  "/vipps-gleder/vipps-carousel-11.svg",
+  "/vipps-gleder/vipps-carousel-12.svg",
+];
 
 // Video component with scroll-triggered autoplay
 function AutoplayVideo({ src }: { src: string }) {
@@ -110,7 +127,7 @@ export default function VippsGlederPage() {
               
               <div className="mb-12">
                 <div className="aspect-video bg-background-container-low rounded-[16px] overflow-hidden max-w-4xl mx-auto">
-                  <AutoplayVideo src="/Isak-Fredrik-Vipps-film.mp4" />
+                  <AutoplayVideo src="/vipps-gleder/vipps-overview-film.mp4" />
                 </div>
               </div>
             </section>
@@ -129,8 +146,8 @@ export default function VippsGlederPage() {
                     </p>
                   </div>
                   <div className="rounded-l overflow-hidden">
-                    <img
-                      src="/6how and why.svg"
+                    <SafeImage
+                      src="/vipps-gleder/vipps-research-how-why.svg"
                       alt="Research phase — why and how Vipps is used"
                       loading="lazy"
                       className="w-full h-auto"
@@ -146,8 +163,8 @@ export default function VippsGlederPage() {
                     </p>
                   </div>
                   <div className="rounded-l overflow-hidden">
-                    <img
-                      src="/6 huh2.svg"
+                    <SafeImage
+                      src="/vipps-gleder/vipps-research-potentials.svg"
                       alt="Exploring potentials in the existing Vipps service"
                       loading="lazy"
                       className="w-full h-auto"
@@ -159,12 +176,12 @@ export default function VippsGlederPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div className="space-y-4">
                     <p className="body text-text-default">
-                      We started early designing different concepts as a way to get feedback and do research. This was possible because of Vipps&apos; strong position in society — it&apos;s known to everyone. By doing this we were able to take with us the best parts, combine them, then design and test over again. <span className="small text-text-subdued">#concepttesting #iteration #prototyping</span>
+                      We started early designing different concepts as a way to get feedback and do research. This was possible because of Vipps&apos; strong position in society — it&apos;s known to everyone. By doing this we were able to take with us the best parts, combine them, then design and test over again. Testing designs and concepts early helped us make choices to move on. <span className="small text-text-subdued">#concepttesting #iteration #prototyping</span>
                     </p>
                   </div>
                   <div className="rounded-l overflow-hidden">
-                    <img
-                      src="/6diff prot.svg"
+                    <SafeImage
+                      src="/vipps-gleder/vipps-research-prototypes.svg"
                       alt="Testing simple concepts and combining strengths"
                       loading="lazy"
                       className="w-full h-auto"
@@ -176,12 +193,12 @@ export default function VippsGlederPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div className="space-y-4">
                     <p className="body text-text-default">
-                      Building on the previous step we could use this as research and design tools, and do research by design — such as workshops, testing and co-designing for new ideas and iterations. <span className="small text-text-subdued">#codesign #workshop</span>
+                      Building on the previous step we could use this as research and design tools, and do research by design — such as workshops, testing and co-designing for new ideas and iterations. The designs and concepts we brought to the workshops helped create good scenarios for testing. <span className="small text-text-subdued">#codesign #workshop</span>
                     </p>
                   </div>
                   <div className="rounded-l overflow-hidden">
-                    <img
-                      src="/vipps-process-4.png"
+                    <SafeImage
+                      src="/vipps-gleder/vipps-process-4.png"
                       alt="Co-design workshops and sessions"
                       loading="lazy"
                       className="w-full h-auto"
@@ -197,8 +214,8 @@ export default function VippsGlederPage() {
                     </p>
                   </div>
                   <div className="rounded-l overflow-hidden">
-                    <img
-                      src="/vipps-process-5.png"
+                    <SafeImage
+                      src="/vipps-gleder/vipps-process-5.png"
                       alt="Design and test iteration cycles"
                       loading="lazy"
                       className="w-full h-auto"
@@ -223,7 +240,12 @@ export default function VippsGlederPage() {
                   </p>
                 </div>
                 <div className="rounded-l overflow-hidden">
-                  <img src="/vipps startegy.svg" alt="Strategy visualization — Vipps gifting strategy" loading="lazy" className="w-full h-[400px] object-contain" />
+                  <SafeImage
+                    src="/vipps-gleder/vipps-strategy-diagram.svg"
+                    alt="Strategy visualization — Vipps gifting strategy"
+                    loading="lazy"
+                    className="w-full h-[400px] object-contain"
+                  />
                 </div>
               </div>
 
@@ -237,7 +259,12 @@ export default function VippsGlederPage() {
               </a>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
                 <div className="relative overflow-hidden max-w-sm">
-                  <img src="/Vipps 1.svg" alt="Design proposal — gift sender screen" loading="lazy" className="w-full h-auto" />
+                  <SafeImage
+                    src="/vipps-gleder/vipps-design-proposal-main.svg"
+                    alt="Design proposal — gift sender screen"
+                    loading="lazy"
+                    className="w-full h-auto"
+                  />
                 </div>
                 <ul className="space-y-5 list-none pt-2">
                   <li><p className="body text-text-default">Keeping visual elements from the gift that are already known to the user in Vipps, while also combining them with elements from physical gifts.</p></li>
@@ -247,13 +274,27 @@ export default function VippsGlederPage() {
                 </ul>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-32 mb-32">
-                <div className="relative max-w-md">
-                  <img src="/vipps donasjon.svg" alt="Design proposal — donation flow screens" loading="lazy" className="w-full h-auto" />
+              <div className="mt-32 mb-32">
+                {/* Smooth horizontal carousel of design proposal screens — full viewport width */}
+                <div className="relative left-1/2 w-screen -ml-[50vw] overflow-hidden">
+                  <div className="flex gap-1 animate-scroll">
+                    {[...vippsCarouselImages, ...vippsCarouselImages].map(
+                      (src, index) => (
+                        <div
+                          key={index}
+                          className="flex-shrink-0 w-[260px] rounded-[24px] overflow-hidden"
+                        >
+                          <SafeImage
+                            src={src}
+                            alt="Vipps design proposal screen"
+                            loading="lazy"
+                            className="w-full h-auto max-h-[380px] object-contain rounded-[24px]"
+                          />
+                        </div>
+                      )
+                    )}
+                  </div>
                 </div>
-                <ul className="space-y-5 list-none pt-2">
-                  <li><p className="body text-text-default">There are many scenarios where money is not desired or adds value. We therefore made it possible to send a double gift — a donation to charity and a thank-you gift to the person you want to show appreciation to, completely without any trace of a transaction.</p></li>
-                </ul>
               </div>
 
               {/* <div className="hidden md:block">
@@ -277,9 +318,13 @@ export default function VippsGlederPage() {
                 We explored further concepts like Vipps services as snow plowing and creating an advent calendar.
               </p>
 
+              <p className="body text-text-default mb-8">
+                I have included some examples of further concepts in this reflection because they show how we worked: producing many different ideas to test, in order to identify strengths we could later combine. Through this process, I have learned the value of bringing good tools and creating concrete scenarios for workshops and testing. I also take with me the importance of co-designing from an early stage and involving different people in the creative process, such as developers, users, and other stakeholders.
+              </p>
+
               <div className="rounded-l overflow-hidden max-w-5xl mx-auto">
-                <img 
-                  src="/vipps jul.svg" 
+                  <SafeImage
+                    src="/vipps-gleder/vipps-advent-calendar.svg"
                   alt="Vipps advent calendar concept"
                   loading="lazy"
                   className="w-full h-auto"

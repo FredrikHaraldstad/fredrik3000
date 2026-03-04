@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import ProjectsView from "@/components/ProjectsView";
 import { projects } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Projects – Fredrik Haraldstad",
+  description:
+    "Case studies of interaction design, UX, UI, service design and front-end development projects by Fredrik Haraldstad.",
+};
 
 export default function ProjectsPage() {
   return (

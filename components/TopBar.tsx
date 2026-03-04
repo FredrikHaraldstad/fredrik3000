@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import TransitionLink from "./TransitionLink";
+import SafeImage from "@/components/SafeImage";
 
 const TOPBAR_H = 56; // h-14
 
@@ -235,14 +236,15 @@ export default function TopBar() {
               animation: isHome ? "jkl-fade-in 0.35s ease both" : "none",
             }}
           >
-            <img
-              src="/Logo short.svg"
+            <SafeImage
+              src="/brand-logo-mark.svg"
               alt="Fredrik Haraldstad"
               className="h-7 w-auto"
               style={{
                 filter:
                   "brightness(0) invert(1) sepia(0.12) saturate(0.8) brightness(0.97)",
               }}
+              fallbackLabel="Logo not available"
             />
           </Link>
         )}

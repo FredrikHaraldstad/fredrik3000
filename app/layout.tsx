@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import TopBar from "@/components/TopBar";
 import ConditionalNav from "@/components/ConditionalNav";
+import Footer from "@/components/Footer";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -45,7 +46,7 @@ export default function RootLayout({
         pt-14 (3.5rem = 56px) offsets content below the fixed TopBar.
         The TopBar and ConditionalNav together form the persistent chrome.
       */}
-      <body className="min-h-screen bg-background-page text-text-default pt-14">
+      <body className="min-h-screen bg-background-page text-text-default pt-14 flex flex-col">
         {/* Skip to main content — WCAG 2.4.1 */}
         <a href="#main-content" className="skip-link">
           Skip to main content
@@ -54,9 +55,10 @@ export default function RootLayout({
         {/* Fixed nav bar — always on top */}
         <TopBar />
 
-        <main id="main-content">
+        <main id="main-content" className="flex-1">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

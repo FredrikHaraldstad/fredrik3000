@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About – Fredrik Haraldstad",
+  description:
+    "Learn more about interaction designer and developer Fredrik Haraldstad, his background, education and experience.",
+};
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen px-6 pt-40 pb-20">
@@ -5,7 +13,7 @@ export default function AboutPage() {
         {/* Logo */}
         <div className="mb-16">
           <img
-            src="/LOGO FERDIG.svg"
+            src="/brand-wordmark.svg"
             alt="Fredrik Haraldstad wordmark"
             loading="lazy"
             className="w-full max-w-2xl"
@@ -61,6 +69,12 @@ export default function AboutPage() {
             Experience
           </h2>
           <dl className="space-y-8">
+            <div className="space-y-1">
+              <dt className="small text-text-subdued">Current</dt>
+              <dd className="paragraph-medium text-text-default">
+                Freelance designer and developer
+              </dd>
+            </div>
             <div className="space-y-1">
               <dt className="small text-text-subdued">January 2025</dt>
               <dd className="paragraph-medium text-text-default">

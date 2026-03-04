@@ -49,6 +49,10 @@ const TransitionLink = forwardRef<HTMLAnchorElement, TransitionLinkProps>(({
     const direction = getNavDirection(pathname, href);
     document.documentElement.dataset.navDirection = direction;
 
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+
     if (typeof window !== 'undefined' && document.startViewTransition) {
       const transition = document.startViewTransition(() => {
         router.push(href);

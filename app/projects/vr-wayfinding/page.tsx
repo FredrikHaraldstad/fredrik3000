@@ -1,6 +1,7 @@
 "use client";
 
 import TransitionLink from "@/components/TransitionLink";
+import SafeImage from "@/components/SafeImage";
 
 export default function VRWayfindingPage() {
   return (
@@ -25,7 +26,7 @@ export default function VRWayfindingPage() {
           <h1 className="title text-text-default mb-8">VR wayfinding</h1>
 
           <p className="body text-text-default mb-6">
-            This project started by finding ways to prototype with better tools. I wanted more functionality and feedback to be able to user-test more realistically. I hooked up Cursor AI with Xcode (Apple) and forked Apple Maps to be able to make my own version, which resulted in a new way of navigating with the help of VR and GPS feedback.
+            This project started by finding ways to prototype with better tools. I wanted more functionality so I could user-test more realistically. I hooked up Cursor AI with Xcode (Apple) and forked Apple Maps to be able to make my own version, which resulted in a new way of navigating with the help of VR and GPS feedback.
           </p>
 
           <p className="small text-text-subdued mb-10">
@@ -66,7 +67,7 @@ export default function VRWayfindingPage() {
             {/* Left — workflow text */}
             <div>
               <p className="body text-text-default mb-4">
-                I designed components in Figma, then used the Figma MCP to connect directly with Cursor — which is hooked up to Xcode. This lets me write Swift UI code and test in Apple&apos;s native environment.
+                I designed components in Figma, then used the Figma MCP to connect directly with Cursor — which is hooked up to Xcode. This lets me write SwiftUI code and test in Apple&apos;s native environment.
               </p>
               <p className="body text-text-default">
                 Most importantly, it lets me download the app I&apos;ve built directly onto my phone, unlocking real hardware like the camera and GPS — making it possible to prototype and test with full fidelity.
@@ -76,8 +77,8 @@ export default function VRWayfindingPage() {
             {/* Right — tool chain icons */}
             <div className="flex items-center justify-center gap-4">
               <div className="flex flex-col items-center gap-3">
-                <img
-                  src="/figmalogo.png"
+                <SafeImage
+                  src="/vr-wayfinding/logo-figma.png"
                   alt="Figma"
                   className="w-16 h-16 rounded-m object-contain"
                 />
@@ -87,8 +88,8 @@ export default function VRWayfindingPage() {
               <span className="text-text-subdued body mb-6" aria-hidden="true">→</span>
 
               <div className="flex flex-col items-center gap-3">
-                <img
-                  src="/Cursor logo.png"
+                <SafeImage
+                  src="/vr-wayfinding/logo-cursor.png"
                   alt="Cursor"
                   className="w-16 h-16 rounded-m object-contain"
                 />
@@ -98,8 +99,8 @@ export default function VRWayfindingPage() {
               <span className="text-text-subdued body mb-6" aria-hidden="true">→</span>
 
               <div className="flex flex-col items-center gap-3">
-                <img
-                  src="/xcode logo.png"
+                <SafeImage
+                  src="/vr-wayfinding/logo-xcode.png"
                   alt="Xcode"
                   className="w-16 h-16 rounded-m object-contain"
                 />
@@ -111,24 +112,24 @@ export default function VRWayfindingPage() {
           {/* Screenshots */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16">
             <div className="rounded-[16px] overflow-hidden bg-background-container-low">
-              <img
-                src="/Screenshot 2026-02-26 at 09.14.51.png"
+              <SafeImage
+                src="/vr-wayfinding/vr-wayfinding-figma-mcp.png"
                 alt="Figma design with MCP connection"
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="rounded-[16px] overflow-hidden bg-background-container-low">
-              <img
-                src="/Screenshot 2026-02-26 at 09.15.36.png"
-                alt="Cursor connected to Xcode with Swift UI code"
+              <SafeImage
+                src="/vr-wayfinding/vr-wayfinding-cursor-xcode.png"
+                alt="Cursor connected to Xcode with SwiftUI code"
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="rounded-[16px] overflow-hidden bg-background-container-low">
-              <img
-                src="/Screenshot 2026-02-26 at 09.18.21.png"
+              <SafeImage
+                src="/vr-wayfinding/vr-wayfinding-iphone-gps.png"
                 alt="App running on iPhone with live GPS"
                 loading="lazy"
                 className="w-full h-full object-cover"
@@ -184,7 +185,7 @@ export default function VRWayfindingPage() {
                 </div>
                 <div className="border-2 border-[#ef4444] rounded-m px-4 py-5">
                   <span className="small text-text-subdued block mb-1">Problem</span>
-                  <p className="body text-text-default">Unsure of direction, awaits</p>
+                  <p className="body text-text-default">Unsure of direction, waits</p>
                 </div>
               </div>
             </div>
@@ -242,23 +243,23 @@ export default function VRWayfindingPage() {
                 This meant they could use the app with a fully functioning GPS and camera — enabling a completely new way of testing. No more &ldquo;can I click this?&rdquo; or &ldquo;where do I go from here?&rdquo; or &ldquo;why isn&apos;t the camera working?&rdquo;
               </p>
               <p className="body text-text-default">
-                The app was taken seriously from the start. The feedback was about the design and the functionality — not about what was broken or missing. That shift changed everything.
+                The app was taken seriously from the start. The feedback was about the design and the functionality — not about what was broken or missing.
               </p>
             </div>
 
             {/* Right — photos, same height */}
             <div className="flex gap-3 items-stretch h-[420px]">
               <div className="rounded-[16px] overflow-hidden flex-1">
-                <img
-                  src="/Screenshot 2026-02-26 at 10.58.33.png"
+                <SafeImage
+                  src="/vr-wayfinding/vr-wayfinding-testing-desktop.png"
                   alt="Three phones and a MacBook Air on a desk during testing"
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-[16px] overflow-hidden w-[180px] shrink-0">
-                <img
-                  src="/Screenshot 2026-02-26 at 10.58.54.png"
+                <SafeImage
+                  src="/vr-wayfinding/vr-wayfinding-home-screen.png"
                   alt="iPhone home screen showing the Cursor test app installed"
                   loading="lazy"
                   className="w-full h-full object-cover object-top"
@@ -287,8 +288,8 @@ export default function VRWayfindingPage() {
             <div className="flex flex-col md:flex-row items-center justify-start gap-12 lg:ml-[80px]">
               {/* Phone */}
               <div className="flex-shrink-0 w-[260px]">
-                <img
-                  src="/Screenshot 2026-02-26 at 10.10 Background Removed.52.png"
+                <SafeImage
+                  src="/vr-wayfinding/vr-wayfinding-hero-phone.png"
                   alt="VR wayfinding app running on iPhone showing compass and Oslo Central Station"
                   loading="lazy"
                   className="w-full h-auto overflow-visible"
@@ -298,15 +299,15 @@ export default function VRWayfindingPage() {
               {/* Compasses */}
               <div className="flex flex-col items-center gap-6">
                 <div className="flex-shrink-0">
-                  <img
-                    src="/compass.svg"
+                  <SafeImage
+                    src="/vr-wayfinding/vr-wayfinding-compass-main.svg"
                     alt="Compass design component"
                     className="w-[220px] h-[220px]"
                   />
                 </div>
                 <div className="flex-shrink-0">
-                  <img
-                    src="/compass 3.svg"
+                  <SafeImage
+                    src="/vr-wayfinding/vr-wayfinding-compass-variant.svg"
                     alt="Compass design component variant"
                     className="w-[220px] h-[220px]"
                   />
@@ -326,22 +327,26 @@ export default function VRWayfindingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Notes */}
             <ul className="space-y-5 list-none pt-3 text-left lg:pl-20">
-              <li><p className="body text-text-default">Trying to design a solution for the problem of arriving at a destination but still wondering — where is the right door, bench, or building? Using AR to mark the correct entrance or building, made possible by combining the camera in AR view with an algorithm that analyses doors and buildings.</p></li>
+              <li>
+                <p className="body text-text-default">
+                  Trying to design a solution for the problem of arriving at a destination but still wondering — where is the right door, bench, or building? Using speculative design to design an AR concept to mark the correct entrance or building, made possible by combining the camera in AR view with an algorithm that analyses doors and buildings.
+                </p>
+              </li>
             </ul>
 
             {/* Images */}
             <div className="flex flex-col md:flex-row items-center justify-start gap-12">
               <div className="flex-shrink-0 w-[260px]">
-                <img
-                  src="/Screenshot 2026-03-02 at 11.48.51 1.png"
+                <SafeImage
+                  src="/vr-wayfinding/vr-wayfinding-arrived-screen.png"
                   alt="You have arrived screen showing Oslo Opera House with Find door button"
                   loading="lazy"
                   className="w-full h-auto"
                 />
               </div>
               <div className="flex-shrink-0 w-[260px]">
-                <img
-                  src="/Screenshot 2026-03-02 at 11.49.13 1.png"
+                <SafeImage
+                  src="/vr-wayfinding/vr-wayfinding-ar-door.png"
                   alt="VR camera view showing entrance found at Oslo Opera House"
                   loading="lazy"
                   className="w-full h-auto"

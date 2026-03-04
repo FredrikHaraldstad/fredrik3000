@@ -20,28 +20,28 @@ export const projects: Project[] = [
     id: "vipps-gleder",
     title: "Vipps gleder",
     catchPhrase: "How do we increase sales in eCommerce with design",
-    image: "/vipps cover.svg",
+    image: "/vipps-gleder/vipps-cover.svg",
     categories: ["Interactiondesign", "Servicedesign"]
   },
   {
     id: "matchi",
     title: "Matchi",
     catchPhrase: "Analyzing and redesigning an existing UI",
-    image: "/front matchi.png",
+    image: "/matchi/matchi-cover.png",
     categories: ["Interactiondesign"]
   },
   {
     id: "infraspace",
     title: "infraspace",
     catchPhrase: "Project catch phrase Project catch phrase",
-    image: "/infraspace-card.png",
+    image: "/infraspace/infraspace-card.png",
     categories: ["Interactiondesign", "Front-end development", "Visualdesign"]
   },
   {
     id: "deichman",
     title: "Deichman",
     catchPhrase: "Engaging youth in shaping library services",
-    image: "/deichman forside.svg",
+    image: "/deichman/deichman-cover.svg",
     categories: ["Servicedesign"]
   },
   {

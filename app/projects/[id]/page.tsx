@@ -3,6 +3,7 @@
 import TransitionLink from "@/components/TransitionLink";
 import { projects } from "@/data/projects";
 import { useEffect, useRef, useState } from "react";
+import SafeImage from "@/components/SafeImage";
 
 interface ProcessStep {
   id: number;
@@ -19,7 +20,7 @@ const projectData: { [key: string]: any } = {
     contributor: "With Isak Steiness Christoffersen",
     projectInfo: "University project (BA-level) · 12 weeks · 2024",
     categories: ["Interactiondesign", "Servicedesign", "Visualdesign"],
-    overviewMedia: [{ type: "video", src: "/Isak-Fredrik-Vipps-film.mp4" }],
+    overviewMedia: [{ type: "video", src: "/vipps-gleder/vipps-overview-film.mp4" }],
     overviewDescription:
       "We have expanded the gifting space with the aim of making it just as easy to delight someone with a small gift as it is to send a Vipps payment. For example, it will be possible to surprise someone with a soda or a chocolate bar, which can be picked up in-store using a QR code.",
     strategyContent: {
@@ -29,11 +30,11 @@ const projectData: { [key: string]: any } = {
       ],
       images: [
         {
-          src: "/vipps-strategy-left.png",
+          src: "/vipps-gleder/vipps-strategy-left.png",
           alt: "Strategy visualization — Gift flow steps",
         },
         {
-          src: "/vipps-strategy-right.png",
+          src: "/vipps-gleder/vipps-strategy-right.png",
           alt: "Strategy visualization — Gift notifications",
         },
       ],
@@ -45,7 +46,7 @@ const projectData: { [key: string]: any } = {
       "Project description Project description Project description Project description Project description Project description",
     contributor: "Contributor",
     categories: ["Interactiondesign", "Front-end development", "Visualdesign"],
-    overviewMedia: [{ type: "video", src: "/Screen Recording 2026-02-24 at 12.53.58.mov" }],
+    overviewMedia: [{ type: "video", src: "/infraspace/infraspace-walkthrough.mov" }],
     images: ["/project-image-1.jpg", "/project-image-2.jpg"],
   },
   matchi: {
@@ -55,26 +56,26 @@ const projectData: { [key: string]: any } = {
     contributor: "Individual",
     projectInfo: "University project (MA-level) · 2 days · 2026",
     categories: ["Interactiondesign"],
-    overviewMedia: [{ type: "image", src: "/ekte.svg" }],
+    overviewMedia: [{ type: "image", src: "/matchi/matchi-sketches-1.svg" }],
     overviewDescription:
       "The redesigned play page focuses on creating a clear entry point for first-time users, with simplified venue cards and progressive disclosure to reduce cognitive load.",
-    overviewAdditionalMedia: [{ type: "image", src: "/ekte 4.svg" }],
+    overviewAdditionalMedia: [{ type: "image", src: "/matchi/matchi-sketches-2.svg" }],
     designProposal: {
       title: "Design proposal",
-      media: { type: "image", src: "/matchi ekte ferdg.svg" },
+      media: { type: "image", src: "/matchi/matchi-final-detail.svg" },
     },
     processSteps: [
       {
         id: 1,
         title: "Analysis of existing interface",
         description: "Identifying pain points in the original design",
-        image: "/process matchi.png",
+        image: "/matchi/matchi-process-1.png",
       },
       {
         id: 2,
         title: "Proposed solution",
         description: "Redesigned interface with improved hierarchy and clarity",
-        image: "/Proposal matchi.png",
+        image: "/matchi/matchi-proposal-1.png",
       },
     ],
   },
@@ -85,20 +86,20 @@ const projectData: { [key: string]: any } = {
     contributor: "Group work",
     projectInfo: "University project (BA-level) · 6 weeks · 2024",
     categories: ["Servicedesign"],
-    overviewMedia: [{ type: "image", src: "/overwiev deichman.svg" }],
+    overviewMedia: [{ type: "image", src: "/deichman/deichman-overview.svg" }],
     overviewDescription:
       "In this project, we worked on two levels: trying to understand what offers and needs the youth had in the city and districts around them, and exploring the same within the library.",
     processContent: {
       title: "Process",
       description:
-        "Doing workshops and taking part in being in the environment we are designing for. Learning to adapt after experiencing and learning from workshop to the next one.",
-      media: { type: "image", src: "/process deich.svg" },
+        "Doing workshops and taking part in being in the environment we are designing for. Learning to adapt after experiencing and learning from one workshop to the next.",
+      media: { type: "image", src: "/deichman/deichman-process.svg" },
     },
     testingContent: {
       title: "Testing",
       description:
-        "Created service models to test where our service best comes in, as well as seeing who needs to take action. Also creating some feedback loops to visualize effect over time.",
-      media: { type: "image", src: "/test deich.svg" },
+        "Created service models to test where our service best comes in, as well as seeing who needs to take action. Also created some feedback loops to visualize effect over time.",
+      media: { type: "image", src: "/deichman/deichman-testing.svg" },
     },
   },
 };
@@ -218,8 +219,8 @@ export default function ProjectDetailPage({
           </ul>
 
           {params.id === "vipps-gleder" && (
-            <div className="mt-12 rounded-l overflow-hidden max-w-4xl">
-              <img
+            <div className="mt-12 rounded-l overflow-hidden max-4xl">
+              <SafeImage
                 src="/vipps flyt ja.svg"
                 alt="Vipps flow — gift and payment experience"
                 loading="lazy"
@@ -245,7 +246,7 @@ export default function ProjectDetailPage({
                   className="rounded-[16px] overflow-hidden max-w-4xl mx-auto mb-8"
                 >
                   {media.type === "image" ? (
-                    <img
+                    <SafeImage
                       src={media.src}
                       alt={`${project.title} overview`}
                       loading="lazy"
@@ -280,7 +281,7 @@ export default function ProjectDetailPage({
                       className="rounded-[16px] overflow-hidden max-w-4xl mx-auto"
                     >
                       {media.type === "image" ? (
-                        <img
+                        <SafeImage
                           src={media.src}
                           alt={`${project.title} additional overview`}
                           loading="lazy"
@@ -309,7 +310,7 @@ export default function ProjectDetailPage({
               </h2>
               <div className="rounded-[16px] overflow-hidden max-w-4xl mx-auto">
                 {project.designProposal.media.type === "image" ? (
-                  <img
+                  <SafeImage
                     src={project.designProposal.media.src}
                     alt={project.designProposal.title}
                     loading="lazy"
@@ -359,13 +360,17 @@ export default function ProjectDetailPage({
                   {project.processSteps.find(
                     (step: ProcessStep) => step.id === activeProcessStep
                   )?.image && (
-                    <img
+                    <SafeImage
                       src={
                         project.processSteps.find(
                           (step: ProcessStep) => step.id === activeProcessStep
                         )?.image
                       }
-                      alt={`Process step ${activeProcessStep}: ${project.processSteps.find((s: ProcessStep) => s.id === activeProcessStep)?.description}`}
+                      alt={`Process step ${activeProcessStep}: ${
+                        project.processSteps.find(
+                          (s: ProcessStep) => s.id === activeProcessStep
+                        )?.description
+                      }`}
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
@@ -423,7 +428,7 @@ export default function ProjectDetailPage({
             </p>
             <div className="rounded-[16px] overflow-hidden max-w-4xl mx-auto">
               {project.processContent.media.type === "image" ? (
-                <img
+                <SafeImage
                   src={project.processContent.media.src}
                   alt={project.processContent.title}
                   loading="lazy"
@@ -450,7 +455,7 @@ export default function ProjectDetailPage({
             </p>
             <div className="rounded-[16px] overflow-hidden max-w-4xl mx-auto">
               {project.testingContent.media.type === "image" ? (
-                <img
+                <SafeImage
                   src={project.testingContent.media.src}
                   alt={project.testingContent.title}
                   loading="lazy"

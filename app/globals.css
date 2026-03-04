@@ -122,6 +122,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--jkl-color-background-container-inverted);
 }
 
 body {

@@ -1,6 +1,7 @@
 "use client";
 
 import TransitionLink from "@/components/TransitionLink";
+import SafeImage from "@/components/SafeImage";
 
 export default function DeichmanPage() {
   return (
@@ -60,10 +61,10 @@ export default function DeichmanPage() {
         <section className="mb-32" aria-labelledby="overview-heading">
           <h2 id="overview-heading" className="heading-1 text-text-default mb-8">Overview</h2>
 
-          <div className="rounded-l overflow-hidden max-w-4xl mx-auto">
-            <img
-              src="/overwiev deichman.svg"
-              alt="SAFT service overview diagram"
+          <div className="rounded-l overflow-hidden max-w-3xl mx-auto">
+            <SafeImage
+              src="/deichman/deichman-process.svg"
+              alt="Workshop process documentation"
               loading="lazy"
               className="w-full h-auto"
             />
@@ -78,38 +79,65 @@ export default function DeichmanPage() {
             {/* Text — left */}
             <div className="lg:w-1/2 flex flex-col gap-6">
               <p className="body text-text-default">
-                In this project, we worked on two levels: trying to understand what offers and needs the youth had in the city and districts around them, and exploring the same within the library. We used methods such as observation, interviews, and mapping before we began co-designing and reviewing the existing service together with the youths.
+                In this project, we worked on two levels: trying to understand what offers and needs the youth had in the city and districts around them, and exploring the same within the library. We used methods such as observation, interviews, and mapping before we began co-designing and reviewing the existing service together with the youths.{" "}
+                <span className="small text-text-subdued">#observation #interviews #mapping #cocreation</span>
               </p>
               <p className="body text-text-default">
-                We learned throughout the process and improved with every workshop. This also shaped the design, creating tools together with the users, which we also think lowered the barrier to using the design later.
+                We learned throughout the process and improved with every workshop. This also shaped the design, creating tools together with the users, which we also think lowered the barrier to using the design later.{" "}
+                <span className="small text-text-subdued">#workshops #codesign #iteration</span>
               </p>
               <p className="body text-text-default">
-                Getting to know the environment we were designing for was important, we had to start easy and get to know the people and earn their respect. They were doing a lot of great stuff from before, and we needed to respect that.
+                Getting to know the environment we were designing for was important, we had to start easy and get to know the people and earn their respect. They were doing a lot of great stuff from before, and we needed to respect that.{" "}
+                <span className="small text-text-subdued">#context #trustbuilding #youth</span>
               </p>
               <p className="body text-text-default">
-                Through designing with the people at Deichman and not for them, we experienced better collaboration and a will and positivity for what we wanted to contribute. This made it easier to do workshops and present our work for them as well as get good feedback and contributions.
+                Through designing with the people at Deichman and not for them, we experienced better collaboration and a will and positivity for what we wanted to contribute. This made it easier to do workshops and present our work for them as well as get good feedback and contributions.{" "}
+                <span className="small text-text-subdued">#collaboration #participation</span>
               </p>
             </div>
 
             {/* Photos — right */}
             <div className="lg:w-1/2 flex flex-col gap-6">
               <div className="rounded-l overflow-hidden">
-                <img
-                  src="/process deich.svg"
-                  alt="Workshop process documentation"
-                  loading="lazy"
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="rounded-l overflow-hidden">
-                <img
-                  src="/deich workshop.svg"
+                <SafeImage
+                  src="/deichman/deichman-workshop.svg"
                   alt="Co-design workshop with youth at Deichman"
                   loading="lazy"
                   className="w-full h-auto"
                 />
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Design proposal */}
+        <section className="mb-32" aria-labelledby="design-proposal-heading">
+          <h2 id="design-proposal-heading" className="heading-1 text-text-default mb-8">Design proposal</h2>
+
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            <div className="lg:w-2/3">
+              <p className="body text-text-default">
+                SAFT includes various tools that the youth council at Stovner can use to become more organized, work smarter, and develop their services over time. This improves Deichman Stovner&apos;s service gradually and enhances the youths&apos; sense of affiliation and responsibility.
+              </p>
+            </div>
+
+            <div className="lg:w-1/3 rounded-l overflow-hidden">
+              <SafeImage
+                src="/deichman/deichman-illustration-youth-council.png"
+                alt="Illustration of youth council collaboration at Deichman Stovner"
+                loading="lazy"
+                className="w-[260px] h-[260px]"
+              />
+            </div>
+          </div>
+
+          <div className="mt-12 rounded-l overflow-hidden max-w-4xl mx-auto">
+            <SafeImage
+              src="/deichman/deichman-overview.svg"
+              alt="SAFT service overview diagram"
+              loading="lazy"
+              className="w-full h-auto"
+            />
           </div>
         </section>
 
@@ -122,8 +150,8 @@ export default function DeichmanPage() {
           </p>
 
           <div className="rounded-l overflow-hidden max-w-4xl mx-auto">
-            <img
-              src="/test deich.svg"
+            <SafeImage
+              src="/deichman/deichman-testing.svg"
               alt="Service model testing visualization"
               loading="lazy"
               className="w-full h-auto"

@@ -5,7 +5,7 @@ import { featuredProjects } from "@/data/projects";
 
 export function ProjectsCarouselFocus() {
   return (
-    <section className="bg-background-page px-8 lg:px-16 pt-24 pb-16" aria-label="Projects">
+    <section className="bg-background-page px-8 lg:px-16 pt-16 pb-16" aria-label="Projects">
       <p className="small text-text-subdued mb-8">Projects</p>
 
       <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 list-none mb-10">
