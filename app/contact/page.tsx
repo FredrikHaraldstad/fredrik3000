@@ -113,9 +113,9 @@ export default function ContactPage() {
           </p>
         </section>
 
-        {/* Drawing canvas section */}
+        {/* Drawing canvas section — hidden on mobile */}
         <section
-          className="mb-16 mt-[42px] py-10 border-b border-border-separator"
+          className="mb-16 mt-[42px] py-10 border-b border-border-separator hidden md:block"
           aria-labelledby="letter-heading"
         >
           <h2 id="letter-heading" className="heading-2 text-text-default mb-8">
